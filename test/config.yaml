@@ -41,7 +41,7 @@ private_key_pass: 'changeme_password'
 ca_cert: 'test/ssl/ca-cert.pem'
 
 ################################################################################
-# Authentication options
+# Authentication payload
 ################################################################################
 
 # Choose the style of user authentication
@@ -54,7 +54,7 @@ authentication_type: 'password'
 max_session_length: 21600
 
 # Signing algorithm for login tokens.
-# Must be one of the RSA or ECDSA options listed here:
+# Must be one of the RSA or ECDSA payload listed here:
 # https://github.com/auth0/node-jsonwebtoken#algorithms-supported
 jwt_signing_alg: "RS512"
 
@@ -98,7 +98,7 @@ proxy_host: 'svmp-server.example.com'
 proxy_port: 8002
 
 ################################################################################
-# Logging options
+# Logging payload
 ################################################################################
 
 # Log file path

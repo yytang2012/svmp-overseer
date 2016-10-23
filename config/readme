@@ -1,0 +1,6 @@
+Users may refer the files under foler "test/" to configure the system.
+
+
+To generate key.pem and cert.pem, please use the following commands
+$ cd to/the/folder
+$ openssl req -newkey rsa:2048 -new -nodes -x509 -days 3650 -keyout key.pem -out cert.pem

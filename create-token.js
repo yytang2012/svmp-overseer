@@ -27,9 +27,9 @@ var
     jwt = require('jsonwebtoken');
 
 program.version(require('./package.json').version)
-       .usage('[options] <username>')
-       .option('-a --admin', 'Create a token with the admin role')
-       .option('-e --expires <n>', 'Token validity time. Ex: 1d, 3h, 30m, 60s, etc.');
+    .usage('[payload] <username>')
+    .option('-a --admin', 'Create a token with the admin role')
+    .option('-e --expires <n>', 'Token validity time. Ex: 1d, 3h, 30m, 60s, etc.');
 
 program.parse(process.argv);
 
@@ -47,20 +47,20 @@ var pass = svmp.config.get('private_key_pass');
 var file = svmp.config.get('private_key');
 process.env.passphrase = pass;
 var command = 'openssl rsa -in ' + file + ' -passin env:passphrase';
-var privKey = shell.exec(command, {silent: true}).output;
+var privKey = shell.exec(command, {silent: true}).stdout;
 delete process.env.passphrase;
 
-var options = {
+var payload = {
     sub: username,
     jti: uuid.v4(),
     iss: require('os').hostname()
 };
-if (program.admin) options.role = 'admin';
-if (program.expires) options.exp = Math.floor((Date.now() + ms(program.expires)) / 1000);
-//if (program.expires) options.exp = Math.floor(toDate(ms(program.expires) / 1000).seconds.fromNow / 1000);
+if (program.admin) payload.role = 'admin';
+if (program.expires) payload.exp = Math.floor((Date.now() + ms(program.expires)) / 1000);
+//if (program.expires) payload.exp = Math.floor(toDate(ms(program.expires) / 1000).seconds.fromNow / 1000);
 
-console.log("Creating token: ", JSON.stringify(options));
-var token = jwt.sign(options, privKey, {algorithm: svmp.config.get('jwt_signing_alg')});
+console.log("Creating token: ", JSON.stringify(payload));
+var token = jwt.sign(payload, privKey, {algorithm: svmp.config.get('jwt_signing_alg')});
 console.log(token);
 
 process.exit();

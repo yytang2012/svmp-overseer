@@ -151,7 +151,7 @@ function RTCPeerConnection(options) {
     function createAnswer() {
         if (!options.onAnswerSDP) return;
 
-        //options.offerSDP.sdp = addStereo(options.offerSDP.sdp);
+        //payload.offerSDP.sdp = addStereo(payload.offerSDP.sdp);
         console.debug('offer-sdp', options.offerSDP.sdp);
         peer.setRemoteDescription(new SessionDescription(options.offerSDP), onSdpSuccess, onSdpError);
         peer.createAnswer(function(sessionDescription) {
@@ -168,7 +168,7 @@ function RTCPeerConnection(options) {
         createAnswer();
     }
 
-    // options.bandwidth = { audio: 50, video: 256, data: 30 * 1000 * 1000 }
+    // payload.bandwidth = { audio: 50, video: 256, data: 30 * 1000 * 1000 }
     var bandwidth = options.bandwidth;
 
     function setBandwidth(sdp) {

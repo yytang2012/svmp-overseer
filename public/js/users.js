@@ -129,7 +129,8 @@ angular.module('users').controller('AuthenticationController', ['$scope', '$http
             // this is only for user convenience, validation also takes place on the server side
             // password must be 8+ characters
             // password must contain one upper case letter, one lower case letter, one digit, and one special character of !@#$%&*()
-            var regExp = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%&*()]).{8,}/;
+            // var regExp = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%&*()]).{8,}/;
+            var regExp = /(?=.*\d)/; // yytang: for development purpose
             if (!regExp.test($scope.credentials.password)) {
                 $scope.error = "Your password does not meet complexity requirements, please try again!";
                 return;

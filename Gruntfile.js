@@ -58,7 +58,7 @@ module.exports = function (grunt) {
         var file = svmp.config.get('private_key');
         process.env.passphrase = pass;
         var command = 'openssl rsa -in ' + file + ' -passin env:passphrase';
-        var privKey = shell.exec(command, {silent: true}).output;
+        var privKey = shell.exec(command, {silent: true}).stdout;
         delete process.env.passphrase;
 
         console.log("Create token for: ", username);

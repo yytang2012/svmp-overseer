@@ -1,65 +1,66 @@
 {
-    "name": "svmp-overseer",
-    "description": "Secure Virtual Mobile Platform central controller, login, and API server",
-    "author": "Dave Bryson",
-    "contributors": [
-        "Dave Bryson",
-        "David Keppler",
-        "Joe Portner"
-    ],
-    "version": "2.0.0",
-    "license": "Apache-2.0",
-    "engines": {
-        "node": "0.10.x",
-        "npm": "1.4.x"
-    },
-    "private": true,
-    "scripts": {
-        "test": "grunt --config test/config.yaml",
-        "postinstall": "bower install --config.interactive=false --allow-root"
-    },
-    "bin": {
-        "svmp-overseer": "./server.js",
-        "svmp-create-token": "./create-token.js"
-    },
-    "dependencies": {
-        "aws-sdk": "~2.0.8",
-        "body-parser": "~1.0.0",
-        "commander": "^2.3.0",
-        "express": "~4.2.0",
-        "express-session": "~1.8.1",
-        "method-override": "~2.2.0",
-        "consolidate": "~0.10.0",
-        "swig": "~1.3.2",
-        "passport": "~0.2.0",
-        "passport-local": "~1.0.0",
-        "cookie-parser": "~1.0.1",
-        "connect-mongo": "~0.4.0",
-        "csurf": "~1.2.0",
-        "lodash": "~2.4.1",
-        "grunt-cli": "~0.1.13",
-        "js-yaml": "^3.2.1",
-        "jsonwebtoken": "~0.4.1",
-        "mongoose": "~3.8.8",
-        "mongoose-q": "~0.0.10",
-        "morgan": "^1.3.1",
-        "ms": "^0.6.2",
-        "nconf": "^0.6.9",
-        "node-uuid": "~1.4.1",
-        "pkgcloud": "git+https://github.com/SVMP/pkgcloud.git#0.9.4-svmp",
-        "q": "~1.0.1",
-        "revalidator": "^0.2.0",
-        "shelljs": "^0.3.0",
-        "to-date": "latest",
-        "winston": "~0.7.3",
-        "nodemailer": "~0.7.0"
-    },
-    "devDependencies": {
-        "mocha": "latest",
-        "supertest": "latest",
-        "grunt": "~0.4.5",
-        "grunt-env": "~0.4.1",
-        "grunt-mocha-test": "~0.10.0",
-        "load-grunt-tasks": "~0.4.0"
-    }
+  "name": "svmp-overseer",
+  "description": "Secure Virtual Mobile Platform central controller, login, and API server",
+  "author": "Dave Bryson",
+  "contributors": [
+    "Dave Bryson",
+    "David Keppler",
+    "Joe Portner",
+    "Yutao Tang"
+  ],
+  "version": "2.0.1",
+  "license": "Apache-2.0",
+  "engines": {
+    "node": "0.10.x",
+    "npm": "1.4.x"
+  },
+  "private": true,
+  "scripts": {
+    "test": "grunt --config test/config.yaml",
+    "postinstall": "bower install --config.interactive=false --allow-root"
+  },
+  "bin": {
+    "svmp-overseer": "./server.js",
+    "svmp-create-token": "./create-token.js"
+  },
+  "dependencies": {
+    "aws-sdk": "~2.6.11",
+    "body-parser": "~1.15.2",
+    "commander": "^2.3.0",
+    "connect-mongo": "~1.3.2",
+    "consolidate": "~0.14.1",
+    "cookie-parser": "~1.4.3",
+    "csurf": "~1.9.0",
+    "express": "~4.14.0",
+    "express-session": "~1.14.1",
+    "grunt-cli": "~1.2.0",
+    "js-yaml": "^3.2.1",
+    "jsonwebtoken": "~7.1.9",
+    "lodash": "~4.16.4",
+    "method-override": "~2.3.6",
+    "mongoose": "~4.6.4",
+    "mongoose-q": "~0.1.0",
+    "morgan": "^1.3.1",
+    "ms": "^0.7.1",
+    "nconf": "^0.8.4",
+    "node-uuid": "~1.4.1",
+    "nodemailer": "~2.6.4",
+    "passport": "~0.3.2",
+    "passport-local": "~1.0.0",
+    "pkgcloud": "git+https://github.com/SVMP/pkgcloud.git#0.9.4-svmp",
+    "q": "~1.4.1",
+    "revalidator": "^0.3.1",
+    "shelljs": "^0.7.4",
+    "swig": "~1.4.2",
+    "to-date": "latest",
+    "winston": "~2.2.0"
+  },
+  "devDependencies": {
+    "mocha": "latest",
+    "supertest": "latest",
+    "grunt": "~1.0.1",
+    "grunt-env": "~0.4.1",
+    "grunt-mocha-test": "~0.13.2",
+    "load-grunt-tasks": "~3.5.2"
+  }
 }
