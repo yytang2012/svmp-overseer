@@ -23,7 +23,6 @@
 
 var
     svmp = require('./lib/svmp'),
-    config = require('./lib/config'),
     path = require('path'),
     vmManager = require('./lib/cloud/vm-manager');
 

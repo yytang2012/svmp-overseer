@@ -147,5 +147,5 @@ function sendToken(res, result) {
         webrtc: svmp.config.get("webrtc")
     };
 
-    res.json(200,responseObj);
+    res.status(200).json(responseObj);
 }
